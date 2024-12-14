@@ -1,14 +1,10 @@
+import { Provider } from "@/components/ui/provider";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Zen_Kaku_Gothic_New } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  weight: ["400", "500", "700"],
+  variable: "--font-zen-kaku-gothic-new",
   subsets: ["latin"],
 });
 
@@ -23,9 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html
+      lang="ja"
+      className={zenKakuGothicNew.variable}
+      suppressHydrationWarning
+    >
+      <body>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
