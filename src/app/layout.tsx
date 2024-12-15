@@ -1,4 +1,6 @@
-import { Provider } from "@/components/ui/provider";
+import { Nav } from "@/components/ui/Nav";
+import { Provider } from "@/components/ui/Provider";
+import { Box } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New } from "next/font/google";
 
@@ -21,11 +23,14 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={zenKakuGothicNew.variable}
+      className={`${zenKakuGothicNew.variable}`}
       suppressHydrationWarning
     >
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Nav />
+          <Box mt="16">{children}</Box>
+        </Provider>
       </body>
     </html>
   );
