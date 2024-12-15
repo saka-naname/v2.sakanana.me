@@ -24,6 +24,7 @@ export const Nav = (props: NavProps) => {
       alignItems="center"
       bg="primary.solid"
       pos="fixed"
+      zIndex="docked"
       top={visible ? "0" : "-16"}
       left="0"
       w="full"

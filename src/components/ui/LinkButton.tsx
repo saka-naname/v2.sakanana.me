@@ -5,12 +5,15 @@ export const LinkButton = (
   props: Omit<ButtonProps, "asChild"> & {
     href: string;
     children?: React.ReactNode | undefined;
+    prefetch?: boolean | null;
   },
 ) => {
-  const { href, children, ...rest } = props;
+  const { href, children, prefetch, ...rest } = props;
   return (
     <Button {...rest} asChild>
-      <NextLink href={href}>{children}</NextLink>
+      <NextLink href={href} prefetch={prefetch}>
+        {children}
+      </NextLink>
     </Button>
   );
 };

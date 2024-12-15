@@ -8,12 +8,15 @@ export const Link = (
   props: Omit<ChakraLinkProps, "asChild"> & {
     href: string;
     children?: React.ReactNode | undefined;
+    prefetch?: boolean | null;
   },
 ) => {
-  const { href, children, ...rest } = props;
+  const { href, children, prefetch, ...rest } = props;
   return (
     <ChakraLink {...rest} asChild>
-      <NextLink href={href}>{children}</NextLink>
+      <NextLink href={href} prefetch={prefetch}>
+        {children}
+      </NextLink>
     </ChakraLink>
   );
 };
