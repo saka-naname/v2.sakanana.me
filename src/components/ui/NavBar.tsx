@@ -10,7 +10,7 @@ export const NavBar = () => {
   const [isVisible, setIsVisible] = useState(true);
 
   const toggleVisible = useCallback(() => {
-    setIsVisible(!isRoot || window.innerHeight * 0.5 < window.scrollY);
+    setIsVisible(!isRoot || window.innerHeight * 0.2 < window.scrollY);
   }, [isRoot, setIsVisible]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <Nav visible={isVisible} enableTransition={true} />
+      <Nav visible={isVisible} />
     </>
   );
 };

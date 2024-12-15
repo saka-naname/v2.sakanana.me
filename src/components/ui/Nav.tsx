@@ -2,7 +2,6 @@ import { Container, Flex, Heading, HStack, LinkProps } from "@chakra-ui/react";
 import { Link } from "./Link";
 
 type NavProps = {
-  enableTransition?: boolean;
   visible?: boolean;
 };
 
@@ -17,7 +16,7 @@ const navLinkStyles: LinkProps = {
 };
 
 export const Nav = (props: NavProps) => {
-  const { enableTransition, visible = true } = props;
+  const { visible = true } = props;
 
   return (
     <Flex
@@ -29,15 +28,25 @@ export const Nav = (props: NavProps) => {
       left="0"
       w="full"
       p="4"
-      h="16"
-      transition={enableTransition ? "top .4s ease-out" : "none"}
+      h={{
+        base: "16",
+        md: "16",
+      }}
+      transition="top .4s ease-out"
     >
       <Container>
         <HStack justify="space-between">
           <Link href="/" {...navLinkStyles}>
-            <Heading size="2xl">sakanana.me</Heading>
+            <Heading
+              size={{
+                base: "xl",
+                md: "2xl",
+              }}
+            >
+              sakanana.me
+            </Heading>
           </Link>
-          <HStack>
+          <HStack hideBelow="md">
             <Link href="/hoge" {...navLinkStyles}>
               <Heading size="xl">Hoge</Heading>
             </Link>
