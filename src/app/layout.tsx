@@ -1,4 +1,4 @@
-import { Nav } from "@/components/ui/Nav";
+import { NavBar } from "@/components/ui/NavBar";
 import { Provider } from "@/components/ui/Provider";
 import { Box } from "@chakra-ui/react";
 import type { Metadata } from "next";
@@ -28,8 +28,9 @@ export default function RootLayout({
     >
       <body>
         <Provider>
-          <Nav />
-          <Box mt="16">{children}</Box>
+          <NavBar />
+
+          <Box>{children}</Box>
         </Provider>
       </body>
     </html>

@@ -1,9 +1,13 @@
+import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
       <main>
+        <Box h="100vh" bg="primary.300"></Box>
+        <Box h="100vh" bg="primary.100"></Box>
+
         <Image
           src="/next.svg"
           alt="Next.js logo"
