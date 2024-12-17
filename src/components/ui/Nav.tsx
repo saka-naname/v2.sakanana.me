@@ -17,13 +17,18 @@ const navLinkStyles: LinkProps = {
   focusRing: "none",
   _focusVisible: {
     textDecoration: "underline",
-    textDecorationColor: "whiteAlpha.500",
+    textDecorationColor: "primary.50",
+    textUnderlineOffset: "3px",
+  },
+  _hover: {
+    textDecoration: "underline",
+    textDecorationColor: "primary.50",
     textUnderlineOffset: "3px",
   },
 };
 
 export const Nav = (props: NavProps) => {
-  const { showBg = true } = props;
+  const { showBg = false } = props;
 
   return (
     <>
@@ -57,7 +62,7 @@ export const Nav = (props: NavProps) => {
           </HStack>
         </Container>
         <Box
-          bg="primary.solid"
+          bg={{ base: "primary.500", _dark: "gray.900" }}
           pos="fixed"
           zIndex="-1"
           top={showBg ? "0" : "-16"}

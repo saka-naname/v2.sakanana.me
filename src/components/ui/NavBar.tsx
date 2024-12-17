@@ -7,7 +7,7 @@ export const NavBar = () => {
   const pathname = usePathname();
   const isRoot = pathname === "/";
 
-  const [isBgVisible, setIsBgVisible] = useState(true);
+  const [isBgVisible, setIsBgVisible] = useState(false);
 
   const toggleBgVisible = useCallback(() => {
     setIsBgVisible(!isRoot || window.innerHeight * 0.2 < window.scrollY);
