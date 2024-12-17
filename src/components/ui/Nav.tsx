@@ -1,8 +1,15 @@
-import { Container, Flex, Heading, HStack, LinkProps } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  HStack,
+  LinkProps,
+} from "@chakra-ui/react";
 import { Link } from "./Link";
 
 type NavProps = {
-  visible?: boolean;
+  showBg?: boolean;
 };
 
 const navLinkStyles: LinkProps = {
@@ -16,44 +23,50 @@ const navLinkStyles: LinkProps = {
 };
 
 export const Nav = (props: NavProps) => {
-  const { visible = true } = props;
+  const { showBg = true } = props;
 
   return (
-    <Flex
-      inline
-      alignItems="center"
-      bg="primary.solid"
-      pos="fixed"
-      zIndex="docked"
-      top={visible ? "0" : "-16"}
-      left="0"
-      w="full"
-      p="4"
-      h={{
-        base: "16",
-        md: "16",
-      }}
-      transition="top .4s ease-out"
-    >
-      <Container>
-        <HStack justify="space-between">
-          <Link href="/" {...navLinkStyles}>
-            <Heading
-              size={{
-                base: "xl",
-                md: "2xl",
-              }}
-            >
-              sakanana.me
-            </Heading>
-          </Link>
-          <HStack hideBelow="md">
-            <Link href="/hoge" {...navLinkStyles}>
-              <Heading size="xl">Hoge</Heading>
+    <>
+      <Flex
+        inline
+        alignItems="center"
+        pos="fixed"
+        zIndex="banner"
+        top="0"
+        left="0"
+        w="full"
+        h="16"
+      >
+        <Container>
+          <HStack justify="space-between">
+            <Link href="/" {...navLinkStyles}>
+              <Heading
+                size={{
+                  base: "xl",
+                  md: "2xl",
+                }}
+              >
+                sakanana.me
+              </Heading>
             </Link>
+            <HStack hideBelow="md">
+              <Link href="/hoge" {...navLinkStyles}>
+                <Heading size="xl">Hoge</Heading>
+              </Link>
+            </HStack>
           </HStack>
-        </HStack>
-      </Container>
-    </Flex>
+        </Container>
+        <Box
+          bg="primary.solid"
+          pos="fixed"
+          zIndex="-1"
+          top={showBg ? "0" : "-16"}
+          left="0"
+          w="full"
+          h="16"
+          transition="top .4s ease-out"
+        ></Box>
+      </Flex>
+    </>
   );
 };

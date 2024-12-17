@@ -7,24 +7,24 @@ export const NavBar = () => {
   const pathname = usePathname();
   const isRoot = pathname === "/";
 
-  const [isVisible, setIsVisible] = useState(true);
+  const [isBgVisible, setIsBgVisible] = useState(true);
 
-  const toggleVisible = useCallback(() => {
-    setIsVisible(!isRoot || window.innerHeight * 0.2 < window.scrollY);
-  }, [isRoot, setIsVisible]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", toggleVisible);
-    return () => window.removeEventListener("scroll", toggleVisible);
-  }, [toggleVisible]);
+  const toggleBgVisible = useCallback(() => {
+    setIsBgVisible(!isRoot || window.innerHeight * 0.2 < window.scrollY);
+  }, [isRoot, setIsBgVisible]);
 
   useEffect(() => {
-    toggleVisible();
-  }, [toggleVisible, isRoot]);
+    window.addEventListener("scroll", toggleBgVisible);
+    return () => window.removeEventListener("scroll", toggleBgVisible);
+  }, [toggleBgVisible]);
+
+  useEffect(() => {
+    toggleBgVisible();
+  }, [toggleBgVisible, isRoot]);
 
   return (
     <>
-      <Nav visible={isVisible} />
+      <Nav showBg={isBgVisible} />
     </>
   );
 };

@@ -81,23 +81,20 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div>
-      <main>
-        <Box h="100svh" pos="relative" overflow="hidden">
-          <Image
-            src="/images/0004_hero.webp"
-            srcWidth={1920}
-            srcHeight={1200}
-            alt="Hero image"
-            quality={100}
-            priority
-            {...heroImageStyles}
-          />
-          <BusinessCard />
-        </Box>
-        <Box h="100svh" bg="primary.100"></Box>
-      </main>
-    </div>
+    <main>
+      <Box h="100svh" pos="relative" overflow="hidden">
+        <Image
+          src="/images/0004_hero.webp"
+          srcWidth={1920}
+          srcHeight={1200}
+          alt="Hero image"
+          quality={100}
+          priority
+          {...heroImageStyles}
+        />
+        <BusinessCard />
+      </Box>
+    </main>
   );
 }
 
@@ -107,7 +104,7 @@ const BusinessCard = () => {
       <Card.Root {...businessCardRootStyles}>
         <Card.Body>
           <Card.Title>さか (saka-naname)</Card.Title>
-          <Card.Description>Student / Web Developer / Artist</Card.Description>
+          <Card.Description>Student / Web Developer</Card.Description>
           <Card.Footer justifyContent="flex-end" p="0" mt="4">
             <HStack gap="2">
               <BusinessCardIconButton
