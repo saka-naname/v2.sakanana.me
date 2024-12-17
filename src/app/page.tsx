@@ -102,9 +102,9 @@ export default function Home() {
             alt="Hero image"
             quality={100}
             priority
-            opacity={{
-              base: "0",
-              _dark: "1",
+            display={{
+              base: "none",
+              _dark: "block",
             }}
             {...heroImageStyles}
           />
@@ -128,18 +128,21 @@ const BusinessCard = () => {
               <BusinessCardIconButton
                 href="https://bsky.app/profile/sakanana.me"
                 title="Bluesky"
+                ariaLabel="See profile on Bluesky"
               >
                 <IconBrandBluesky />
               </BusinessCardIconButton>
               <BusinessCardIconButton
                 href="https://github.com/saka-naname"
                 title="GitHub"
+                ariaLabel="See profile on GitHub"
               >
                 <IconBrandGithub />
               </BusinessCardIconButton>
               <BusinessCardIconButton
                 href="mailto:reisuicupsoup@gmail.com"
                 title="Contact"
+                ariaLabel="Contact via email"
               >
                 <IconMail />
               </BusinessCardIconButton>
@@ -155,6 +158,7 @@ const BusinessCardIconButton = (props: {
   href: string;
   title?: string;
   children?: React.ReactNode | undefined;
+  ariaLabel?: string;
 }) => {
   return (
     <Tooltip.Root
@@ -170,6 +174,7 @@ const BusinessCardIconButton = (props: {
           w="10"
           h="10"
           prefetch={false}
+          aria-label={props.ariaLabel}
         >
           {props.children}
         </LinkButton>
