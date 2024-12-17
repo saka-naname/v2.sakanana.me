@@ -36,6 +36,8 @@ const heroImageStyles: ImageProps = {
   mt: {
     smOnly: "-6",
   },
+  pos: "absolute",
+  inset: "0",
 };
 
 const businessCardRootStyles: CardRootProps = {
@@ -82,16 +84,32 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <Box h="100svh" pos="relative" overflow="hidden">
-        <Image
-          src="/images/0004_hero.webp"
-          srcWidth={1920}
-          srcHeight={1200}
-          alt="Hero image"
-          quality={100}
-          priority
-          {...heroImageStyles}
-        />
+      <Box h="100svh" overflow="hidden" pos="relative">
+        <Box h="100svh">
+          <Image
+            src="/images/0004_hero.webp"
+            srcWidth={1920}
+            srcHeight={1200}
+            alt="Hero image"
+            quality={100}
+            priority
+            {...heroImageStyles}
+          />
+          <Image
+            src="/images/0004_hero_wosl.webp"
+            srcWidth={1920}
+            srcHeight={1200}
+            alt="Hero image"
+            quality={100}
+            priority
+            opacity={{
+              base: "0",
+              _dark: "1",
+            }}
+            {...heroImageStyles}
+          />
+        </Box>
+
         <BusinessCard />
       </Box>
     </main>
