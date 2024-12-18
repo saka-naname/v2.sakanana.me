@@ -88,8 +88,8 @@ export default function Home() {
         <Box h="100svh">
           <Image
             src="/images/0004_hero.webp"
-            srcWidth={1920}
-            srcHeight={1200}
+            srcWidth={960}
+            srcHeight={600}
             alt="Hero image"
             quality={100}
             priority
@@ -97,8 +97,8 @@ export default function Home() {
           />
           <Image
             src="/images/0004_hero_wosl.webp"
-            srcWidth={1920}
-            srcHeight={1200}
+            srcWidth={960}
+            srcHeight={600}
             alt="Hero image"
             quality={100}
             priority
