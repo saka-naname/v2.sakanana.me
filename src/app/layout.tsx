@@ -8,6 +8,7 @@ const zenKakuGothicNew = Zen_Kaku_Gothic_New({
   weight: ["400", "500", "700"],
   variable: "--font-zen-kaku-gothic-new",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
