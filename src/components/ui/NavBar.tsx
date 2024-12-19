@@ -8,6 +8,9 @@ import {
   HStack,
   IconButton,
   LinkProps,
+  Separator,
+  Span,
+  Stack,
 } from "@chakra-ui/react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
@@ -86,9 +89,13 @@ export const NavBar = () => {
               </Link>
             </Box>
             <Box>
-              <HStack hideBelow="md">
-                <Link href="/hoge" {...navLinkStyles}>
-                  <Heading size="xl">Hoge</Heading>
+              <HStack hideBelow="md" fontSize="xl" fontWeight="bold" gap="8">
+                <Link href="/about" {...navLinkStyles}>
+                  About
+                </Link>
+                <Separator orientation="vertical" height="4" />
+                <Link href="https://v1.sakanana.me/blog" {...navLinkStyles}>
+                  Blog<Span fontSize="xs">(v1)</Span>
                 </Link>
               </HStack>
               <Box
@@ -125,20 +132,28 @@ export const NavBar = () => {
           </HStack>
         </Container>
         <Box
-          bg={{ base: "primary.500", _dark: "gray.900" }}
+          bg={{ base: "secondary.900", _dark: "gray.900" }}
           pos="absolute"
           zIndex="-1"
           top={isBgVisible ? "0" : "-16"}
           left="0"
           w="full"
           h="16"
-          transition="top .4s ease"
+          transition="top .25s ease"
         ></Box>
-        <Box pos="absolute" zIndex="-2" top="0" left="0" w="full" h="100svh">
+        <Box
+          pos="absolute"
+          zIndex="-2"
+          top="0"
+          left="0"
+          w="full"
+          h="100svh"
+          pointerEvents="none"
+        >
           <motion.div
             initial={false}
             animate={open ? "open" : "closed"}
-            transition={{ duration: 0.4, ease: "circOut" }}
+            transition={{ duration: 0.42, ease: "circOut" }}
             variants={{
               open: {
                 y: "0svh",
@@ -149,11 +164,12 @@ export const NavBar = () => {
             }}
           >
             <Box
-              bg={{ base: "primary.500", _dark: "gray.900" }}
+              bg={{ base: "secondary.900", _dark: "gray.900" }}
               w="full"
               h="100svh"
               p="8"
               pt="20"
+              pointerEvents="auto"
             >
               <motion.div
                 initial={false}
@@ -166,13 +182,21 @@ export const NavBar = () => {
                     opacity: 0,
                   },
                 }}
-                transition={{ duration: 0.3, ease: "circIn" }}
+                transition={{ duration: 0.42, ease: "circIn" }}
                 style={{
                   width: "100%",
                   height: "100%",
                 }}
               >
-                <Flex border="1px solid gray" w="full" h="full"></Flex>
+                <Stack w="full" h="full" fontSize="2xl" fontWeight="bold">
+                  <Link href="/about" color="white">
+                    About
+                  </Link>
+                  <Separator />
+                  <Link href="https://v1.sakanana.me/blog" color="white">
+                    Blog <Span fontSize="xs">(v1)</Span>
+                  </Link>
+                </Stack>
               </motion.div>
             </Box>
           </motion.div>
