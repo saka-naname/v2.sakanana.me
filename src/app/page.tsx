@@ -95,19 +95,6 @@ export default function Home() {
             priority
             {...heroImageStyles}
           />
-          <Image
-            src="/images/0004_hero_wosl.webp"
-            srcWidth={960}
-            srcHeight={600}
-            alt="Hero image"
-            quality={100}
-            priority
-            display={{
-              base: "none",
-              _dark: "block",
-            }}
-            {...heroImageStyles}
-          />
         </Box>
 
         <BusinessCard />
