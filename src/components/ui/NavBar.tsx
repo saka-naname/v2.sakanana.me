@@ -141,7 +141,15 @@ export const NavBar = () => {
           h="16"
           transition="top .25s ease"
         ></Box>
-        <Box pos="absolute" zIndex="-2" top="0" left="0" w="full" h="100svh">
+        <Box
+          pos="absolute"
+          zIndex="-2"
+          top="0"
+          left="0"
+          w="full"
+          h="100svh"
+          pointerEvents="none"
+        >
           <motion.div
             initial={false}
             animate={open ? "open" : "closed"}
@@ -161,6 +169,7 @@ export const NavBar = () => {
               h="100svh"
               p="8"
               pt="20"
+              pointerEvents="auto"
             >
               <motion.div
                 initial={false}
