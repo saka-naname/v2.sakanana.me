@@ -26,7 +26,7 @@ export default function RootLayout({
       className={`${zenKakuGothicNew.variable}`}
       suppressHydrationWarning
     >
-      <body>
+      <body style={{ background: "#586774" }}>
         <Provider>
           <NavBar />
           <Box>{children}</Box>

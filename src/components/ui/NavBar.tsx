@@ -132,20 +132,20 @@ export const NavBar = () => {
           </HStack>
         </Container>
         <Box
-          bg={{ base: "primary.500", _dark: "gray.900" }}
+          bg={{ base: "secondary.900", _dark: "gray.900" }}
           pos="absolute"
           zIndex="-1"
           top={isBgVisible ? "0" : "-16"}
           left="0"
           w="full"
           h="16"
-          transition="top .4s ease"
+          transition="top .25s ease"
         ></Box>
         <Box pos="absolute" zIndex="-2" top="0" left="0" w="full" h="100svh">
           <motion.div
             initial={false}
             animate={open ? "open" : "closed"}
-            transition={{ duration: 0.4, ease: "circOut" }}
+            transition={{ duration: 0.42, ease: "circOut" }}
             variants={{
               open: {
                 y: "0svh",
@@ -156,7 +156,7 @@ export const NavBar = () => {
             }}
           >
             <Box
-              bg={{ base: "primary.500", _dark: "gray.900" }}
+              bg={{ base: "secondary.900", _dark: "gray.900" }}
               w="full"
               h="100svh"
               p="8"
@@ -173,7 +173,7 @@ export const NavBar = () => {
                     opacity: 0,
                   },
                 }}
-                transition={{ duration: 0.3, ease: "circIn" }}
+                transition={{ duration: 0.42, ease: "circIn" }}
                 style={{
                   width: "100%",
                   height: "100%",
