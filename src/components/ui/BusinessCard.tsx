@@ -34,19 +34,8 @@ const businessCardContainerStyles: FlexProps = {
   left: "0",
   top: "0",
   p: "4",
-  pr: {
-    smOnly: "16",
-  },
-  justifyContent: {
-    base: "flex-start",
-    sm: "flex-end",
-    md: "flex-start",
-  },
-  alignItems: {
-    base: "flex-end",
-    sm: "center",
-    md: "flex-end",
-  },
+  justifyContent: "flex-start",
+  alignItems: "flex-end",
 };
 
 export const BusinessCard = () => {

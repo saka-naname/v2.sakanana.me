@@ -5,20 +5,7 @@ const heroImageStyles: ImageProps = {
   w: "full",
   h: "100svh",
   objectFit: "cover",
-  objectPosition: {
-    base: "29% 35%",
-    sm: "50% 35%",
-    md: "34% 35%",
-    lg: "40% 35%",
-    xl: "45% 35%",
-    "2xl": "0 35%",
-  },
-  zoom: {
-    smOnly: "1.7",
-  },
-  mt: {
-    smOnly: "-6",
-  },
+  objectPosition: "30% 35%",
   pos: "absolute",
   inset: "0",
 };
