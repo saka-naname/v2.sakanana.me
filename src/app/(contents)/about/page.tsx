@@ -18,7 +18,7 @@ export default function Hoge() {
           wrap="wrap"
           rounded="lg"
           w="full"
-          bg="white"
+          bg="bg"
           p={{
             base: "4",
             md: "8",
@@ -78,7 +78,7 @@ export default function Hoge() {
                   <ListItem>
                     Webフロントエンドを中心とした開発を行っています
                   </ListItem>
-                  <ListItem>自らの手で何かを作り上げるのが好きです</ListItem>
+                  <ListItem>自らの手で何かを作るのが好きです</ListItem>
                 </ListRoot>
               </Flex>
             </Flex>

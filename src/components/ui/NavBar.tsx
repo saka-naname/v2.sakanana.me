@@ -93,7 +93,11 @@ export const NavBar = () => {
                 <Link href="/about" {...navLinkStyles}>
                   About
                 </Link>
-                <Separator orientation="vertical" height="4" />
+                <Separator
+                  orientation="vertical"
+                  height="4"
+                  borderColor="white"
+                />
                 <Link href="https://v1.sakanana.me/blog" {...navLinkStyles}>
                   Blog<Span fontSize="xs">(v1)</Span>
                 </Link>
