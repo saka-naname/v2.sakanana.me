@@ -1,6 +1,7 @@
 import { NavBar } from "@/components/ui/NavBar";
 import { Provider } from "@/components/ui/Provider";
 import { Box } from "@chakra-ui/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New } from "next/font/google";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <NavBar />
           <Box>{children}</Box>
         </Provider>
+        <SpeedInsights />
       </body>
     </html>
   );

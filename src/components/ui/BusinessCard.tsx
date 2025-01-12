@@ -1,4 +1,5 @@
 import {
+  Box,
   Card,
   CardRootProps,
   Flex,
@@ -22,8 +23,7 @@ const businessCardRootStyles: CardRootProps = {
   },
   w: {
     base: "full",
-    sm: "64",
-    md: "96",
+    sm: "96",
   },
 };
 
@@ -42,34 +42,44 @@ export const BusinessCard = () => {
   return (
     <Flex {...businessCardContainerStyles}>
       <Card.Root {...businessCardRootStyles}>
-        <Card.Body>
-          <Card.Title>さか (saka-naname)</Card.Title>
-          <Card.Description>Student / Web Developer</Card.Description>
-          <Card.Footer justifyContent="flex-end" p="0" mt="4">
-            <HStack gap="2">
-              <BusinessCardIconButton
-                href="https://bsky.app/profile/sakanana.me"
-                title="Bluesky"
-                ariaLabel="See profile on Bluesky"
-              >
-                <IconBrandBluesky />
-              </BusinessCardIconButton>
-              <BusinessCardIconButton
-                href="https://github.com/saka-naname"
-                title="GitHub"
-                ariaLabel="See profile on GitHub"
-              >
-                <IconBrandGithub />
-              </BusinessCardIconButton>
-              <BusinessCardIconButton
-                href="mailto:reisuicupsoup@gmail.com"
-                title="Contact"
-                ariaLabel="Contact via email"
-              >
-                <IconMail />
-              </BusinessCardIconButton>
-            </HStack>
-          </Card.Footer>
+        <Card.Body
+          flexDir="row"
+          flexWrap="wrap"
+          alignItems="center"
+          gapX="4"
+          gapY="2"
+        >
+          <Box>
+            <Card.Title>さか (saka-naname)</Card.Title>
+            <Card.Description>Student / Web Developer</Card.Description>
+          </Box>
+          <Box ml="auto">
+            <Card.Footer justifyContent="flex-end" p="0">
+              <HStack gap="2">
+                <BusinessCardIconButton
+                  href="https://bsky.app/profile/sakanana.me"
+                  title="Bluesky"
+                  ariaLabel="See profile on Bluesky"
+                >
+                  <IconBrandBluesky />
+                </BusinessCardIconButton>
+                <BusinessCardIconButton
+                  href="https://github.com/saka-naname"
+                  title="GitHub"
+                  ariaLabel="See profile on GitHub"
+                >
+                  <IconBrandGithub />
+                </BusinessCardIconButton>
+                <BusinessCardIconButton
+                  href="mailto:reisuicupsoup@gmail.com"
+                  title="Contact"
+                  ariaLabel="Contact via email"
+                >
+                  <IconMail />
+                </BusinessCardIconButton>
+              </HStack>
+            </Card.Footer>
+          </Box>
         </Card.Body>
       </Card.Root>
     </Flex>

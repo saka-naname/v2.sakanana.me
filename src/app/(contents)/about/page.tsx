@@ -9,16 +9,24 @@ import {
   ListItem,
   ListRoot,
 } from "@chakra-ui/react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | sakanana.me",
+  alternates: {
+    canonical: "https://sakanana.me/about",
+  },
+};
 
 export default function Hoge() {
   return (
-    <Box minH="100vh" pt="24">
+    <Box minH="100vh" pt="24" bg="bg.emphasized">
       <Container>
         <Flex
           wrap="wrap"
           rounded="lg"
           w="full"
-          bg="white"
+          bg="bg"
           p={{
             base: "4",
             md: "8",
@@ -78,7 +86,7 @@ export default function Hoge() {
                   <ListItem>
                     Webフロントエンドを中心とした開発を行っています
                   </ListItem>
-                  <ListItem>自らの手で何かを作り上げるのが好きです</ListItem>
+                  <ListItem>自らの手で何かを作るのが好きです</ListItem>
                 </ListRoot>
               </Flex>
             </Flex>

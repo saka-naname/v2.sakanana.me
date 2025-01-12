@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
   },
+  alternates: {
+    canonical: "https://sakanana.me",
+  },
 };
 
 export default function Home() {
