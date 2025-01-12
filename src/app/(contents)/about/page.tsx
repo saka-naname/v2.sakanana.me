@@ -12,7 +12,7 @@ import {
 
 export default function Hoge() {
   return (
-    <Box minH="100vh" pt="24">
+    <Box minH="100vh" pt="24" bg="bg.emphasized">
       <Container>
         <Flex
           wrap="wrap"
