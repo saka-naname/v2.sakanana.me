@@ -9,6 +9,14 @@ import {
   ListItem,
   ListRoot,
 } from "@chakra-ui/react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | sakanana.me",
+  alternates: {
+    canonical: "https://sakanana.me/about",
+  },
+};
 
 export default function Hoge() {
   return (
