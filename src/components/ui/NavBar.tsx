@@ -98,8 +98,8 @@ export const NavBar = () => {
                   height="4"
                   borderColor="white"
                 />
-                <Link href="https://v1.sakanana.me/blog" {...navLinkStyles}>
-                  Blog<Span fontSize="xs">(v1)</Span>
+                <Link href="/blog" {...navLinkStyles}>
+                  Blog
                 </Link>
               </HStack>
               <Box
